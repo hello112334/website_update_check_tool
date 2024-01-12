@@ -1,4 +1,13 @@
 # website_update_check_tool
+## Basic files
+app.py: main program
+list.csv: url list(65 cities)
+update_list.csv: compared result
+
+## Compare Standard
+1. Html content of url
+2. Image file
+
 ## Description
 This tool can download HTML Script and take screenshot automatically.
 Screenshots will be compared with last image and current image, and save as a image file after adding a red frame in different part.
