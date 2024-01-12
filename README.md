@@ -36,6 +36,8 @@ cd (YOUR_PATH)/website_update_check_tool
 pip install -r requirements.txt
 ```
 
+or you can just pickup packages you need
+
 ### 2. python script.py
 ```
 python app.py
