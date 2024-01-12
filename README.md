@@ -11,7 +11,7 @@
 * Image file(for check)
 
 ## Description
-* lThis tool can download HTML Script and take screenshot automatically from url list(list.csv).
+* This tool can download HTML Script and take screenshot automatically from url list(list.csv).
 * Screenshots will be compared with last image and current image, and save as a image file after adding a red frame in different part.
 
 ## Getting Started
