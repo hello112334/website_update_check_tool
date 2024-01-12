@@ -18,6 +18,14 @@
 ### Dependencies
 * Windows OS, Python(version should be 3.8?+).
 
+### Main packages and APIs
+1. BeautifulSoup
+2. selenium
+3. PIL
+4. cv2
+5. requests
+6. ssl
+
 ### 0. Download this project and go to the folder with CMD
 ```
 cd (YOUR_PATH)/website_update_check_tool

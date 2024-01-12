@@ -1,15 +1,14 @@
 """
-update check
+website update check
 
 """
 # Basic
 import os
-import sys
+# import sys
 import time
 import random
 import pandas as pd
 from io import BytesIO  # BytesIOのインポート
-import urllib3
 import ssl
 
 # Scrapy
@@ -18,7 +17,8 @@ from bs4 import BeautifulSoup
 # requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL'
 # requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS = 'ALL:@SECLEVEL=1'
 from requests.adapters import HTTPAdapter
-from urllib3.poolmanager import PoolManager
+# import urllib3
+# from urllib3.poolmanager import PoolManager
 
 class SSLAdapter(HTTPAdapter):
     def init_poolmanager(self, *args, **kwargs):
