@@ -10,11 +10,26 @@ import random
 import pandas as pd
 from io import BytesIO  # BytesIOのインポート
 import urllib3
+import ssl
 
 # Scrapy
 import requests
 from bs4 import BeautifulSoup
-requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL'
+# requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL'
+# requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS = 'ALL:@SECLEVEL=1'
+from requests.adapters import HTTPAdapter
+from urllib3.poolmanager import PoolManager
+
+class SSLAdapter(HTTPAdapter):
+    def init_poolmanager(self, *args, **kwargs):
+        context = ssl.create_default_context()
+        context.set_ciphers('DEFAULT@SECLEVEL=1')  # Lowering security level
+        kwargs['ssl_context'] = context
+        return super(SSLAdapter, self).init_poolmanager(*args, **kwargs)
+
+session = requests.Session()
+session.mount('https://', SSLAdapter())
+
 
 # Image Processing
 from PIL import Image, ImageChops
@@ -125,34 +140,38 @@ def check_update(i, city, town, text, now_str):
         print(f"[INFO][{i}] Add Column : {now_str}")
         df[now_str] = ""
 
-    # Update only if last_update is not NaN
+    # Update only if last_update is not NaN and current data is different from last data
     if not pd.isna(df.at[i, 'last_update']):
-        # Retrieve the last update timestamp
-        last_update = df.at[i, 'last_update']
-        print(f"[INFO][{i}] Last Update : {last_update}")
+        if now_str != df.at[i, 'last_update']:
+            # Retrieve the last update timestamp
+            last_update = df.at[i, 'last_update']
+            print(f"[INFO][{i}] Last Update : {last_update}")
 
-        # Retrieve data from last update
-        last_data = get_txt(city, town, last_update)
+            # Retrieve data from last update
+            last_data = get_txt(city, town, last_update)
 
-        # Compare with current data
-        check_result = last_data == text
-        print(f"[INFO][{i}] Check Result : {check_result}")
+            # Compare with current data
+            check_result = last_data == text
+            print(f"[INFO][{i}] Check Result : {check_result}")
 
-        # Update the comparison result in the dataframe
-        df.at[i, now_str] = check_result
+            # Update the comparison result in the dataframe
+            df.at[i, now_str] = check_result
 
-        # 画像を比較して差分をハイライト
-        last_image = f"{output_folder}/{city}/{town}/{last_update}.png"
-        current_image = f"{output_folder}/{city}/{town}/{now_str}.png"
-        checked_image = f"{output_folder}/{city}/{town}/{now_str}_checked.png"
-        compare_and_highlight_diff(last_image, current_image, checked_image)
+            # 画像を比較して差分をハイライト
+            last_image = f"{output_folder}/{city}/{town}/{last_update}.png"
+            current_image = f"{output_folder}/{city}/{town}/{now_str}.png"
+            checked_image = f"{output_folder}/{city}/{town}/{now_str}_checked.png"
+            compare_and_highlight_diff(last_image, current_image, checked_image)
+
+            df.at[i, 'last_update'] = now_str
 
     else:
         # If last_update is NaN, mark as "-"
         df.at[i, now_str] = "-"
+        df.at[i, 'last_update'] = now_str
 
     # Update the last_update field
-    df.at[i, 'last_update'] = now_str
+    # df.at[i, 'last_update'] = now_str
 
     # Save the updated DataFrame back to CSV
     df.to_csv(update_list_path, index=False)
@@ -186,7 +205,7 @@ def compare_and_highlight_diff(img1_path, img2_path, output_path):
             cv2.rectangle(img1_cv, (x, y), (x + w, y + h), (255, 0, 0), 2)
         
         if len(contours) > 0:
-            print(f"[INFO] 差分あり")
+            print(f"[INFO] 画像には差分あります")
             output_path = output_path.replace(".png", "_diff.png")
 
         # 結果を保存
@@ -226,8 +245,10 @@ if __name__ == '__main__':
                 print(f"[INFO][{i}] URL : {get_url}")
 
                 # ブラウザのHTMLを取得
-                requests.packages.urllib3.contrib.pyopenssl.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL'
-                html = requests.get(get_url, verify=False)
+                # requests.packages.urllib3.contrib.pyopenssl.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL'
+                # html = requests.get(get_url, verify=False)
+                html = session.get(get_url)
+
                 # html.encoding = 'shift_jis'  # 文字コード
                 soup = BeautifulSoup(html.content, features="html.parser", from_encoding='shift_jis')
                 soup_utf8 = str(soup.encode('utf-8'))

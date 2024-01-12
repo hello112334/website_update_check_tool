@@ -31,3 +31,11 @@ pip install -r requirements.txt
 ```
 python app.py
 ```
+
+
+
+## Other
+### Update requirements.txt
+```
+pip freeze > requirements.txt
+```
