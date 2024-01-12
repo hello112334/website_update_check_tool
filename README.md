@@ -1,12 +1,11 @@
 # website_update_check_tool
 ## Basic files
-* app.py: main program
-* list.csv: url list(64 cities + 1 google website for test)
-:::note info
-True: Same
-False: not Same
-:::
-* update_list.csv: compared result of last and current website
+- app.py: main program
+- list.csv: url list(64 cities + 1 google website for test)
+  - True: Same
+  - False: not Same
+
+- update_list.csv: compared result of last and current website
 
 ## Compare Standard
 1. Html content of url
