@@ -9,10 +9,12 @@ import time
 import random
 import pandas as pd
 from io import BytesIO  # BytesIOのインポート
+import urllib3
 
 # Scrapy
 import requests
 from bs4 import BeautifulSoup
+requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL'
 
 # Image Processing
 from PIL import Image, ImageChops
@@ -224,7 +226,8 @@ if __name__ == '__main__':
                 print(f"[INFO][{i}] URL : {get_url}")
 
                 # ブラウザのHTMLを取得
-                html = requests.get(get_url)
+                requests.packages.urllib3.contrib.pyopenssl.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL'
+                html = requests.get(get_url, verify=False)
                 # html.encoding = 'shift_jis'  # 文字コード
                 soup = BeautifulSoup(html.content, features="html.parser", from_encoding='shift_jis')
                 soup_utf8 = str(soup.encode('utf-8'))
