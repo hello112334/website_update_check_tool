@@ -78,9 +78,9 @@ def get_list():
 
     return list
 
-def init(city, town):
+def init(i, city, town):
     """note"""
-    print("[INFO] INIT")
+    print(f"[INFO][{i}] INIT")
 
     # create folder
     os.makedirs(f"{output_folder}/{city}/{town}", exist_ok=True)
@@ -181,7 +181,7 @@ def compare_and_highlight_diff(img1_path, img2_path, output_path):
         # 差分のある領域に赤枠を描画
         for contour in contours:
             x, y, w, h = cv2.boundingRect(contour)
-            cv2.rectangle(img1_cv, (x, y), (x + w, y + h), (0, 0, 255), 2)
+            cv2.rectangle(img1_cv, (x, y), (x + w, y + h), (255, 0, 0), 2)
         
         if len(contours) > 0:
             print(f"[INFO] 差分あり")
@@ -214,7 +214,7 @@ if __name__ == '__main__':
                 town_name = datalist[i][1]
 
                 # 初期化
-                init(city_name, town_name)
+                init(i, city_name, town_name)
                 
                 # ドライバーを初期化する
                 driver = webdriver.Chrome(options=option)
@@ -225,7 +225,7 @@ if __name__ == '__main__':
 
                 # ブラウザのHTMLを取得
                 html = requests.get(get_url)
-                # html.encoding = 'z'  # 文字コード
+                # html.encoding = 'shift_jis'  # 文字コード
                 soup = BeautifulSoup(html.content, features="html.parser", from_encoding='shift_jis')
                 soup_utf8 = str(soup.encode('utf-8'))
 
@@ -239,10 +239,6 @@ if __name__ == '__main__':
 
                 # ブラウザのHTMLを取得
                 save_txt(city_name, town_name, soup_utf8, now_str)
-
-                # 更新チェック
-                print(f"[INFO][{i}] 更新チェック")
-                check_update(i, city_name, town_name, soup_utf8, now_str)
 
                 # screenshotを取得する
                 # ページの高さを取得
@@ -258,11 +254,6 @@ if __name__ == '__main__':
                     screenshot = driver.get_screenshot_as_png()
                     screenshots.append(Image.open(BytesIO(screenshot)))
 
-                # driver.save_screenshot(f"{output_folder}/{city_name}/{town_name}/{now_str}.png")
-
-                # ブラウザを閉じる
-                driver.quit()
-
                 # 画像を合成
                 total_width = screenshots[0].width
                 combined_height = sum([img.height for img in screenshots])
@@ -275,6 +266,15 @@ if __name__ == '__main__':
 
                 # 画像を保存
                 combined_image.save(f"{output_folder}/{city_name}/{town_name}/{now_str}.png")
+
+                # 更新チェック
+                print(f"[INFO][{i}] 更新チェック")
+                check_update(i, city_name, town_name, soup_utf8, now_str)
+
+                # driver.save_screenshot(f"{output_folder}/{city_name}/{town_name}/{now_str}.png")
+
+                # ブラウザを閉じる
+                driver.quit()
 
                 print(f"[INFO][{i}] Finish")
             except Exception as err:
