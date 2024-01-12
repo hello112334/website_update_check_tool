@@ -1,9 +1,18 @@
 # website_update_check_tool
 ## Description
-An in-depth paragraph about your project and overview of use.
+This tool can download HTML Script and take screenshot automatically.
+Screenshots will be compared with last image and current image, and save as a image file after adding a red frame in different part.
 
 ## Getting Started
-### 0. Download this and go to the folder
+### Dependencies
+
+* ex. Windows OS, Python 3.11, etc.
+
+### 0. Download this project and go to the folder with CMD
+```
+cd (YOUR_PATH)/website_update_check_tool
+```
+
 ### 1. Package Install
 ```
 pip install -r requirements.txt
