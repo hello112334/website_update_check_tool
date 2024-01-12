@@ -1,8 +1,8 @@
 # website_update_check_tool
 ## Basic files
-app.py: main program
-list.csv: url list(65 cities)
-update_list.csv: compared result
+* app.py: main program
+* list.csv: url list(65 cities)
+* update_list.csv: compared result
 
 ## Compare Standard
 1. Html content of url
