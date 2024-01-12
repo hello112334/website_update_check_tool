@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="ja" xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/javascript" http-equiv="Content-Script-Type"/>
+<title>é«å²¡å¸å¬å¼ãã¼ã ãã¼ã¸ ã»ã£ã¨ãããé«å²¡ï¼Takaoka City Homepageï¼</title>
+<meta content="e9ba29a53b5f9625-3e40e0c4c9056bf9-gb3f02ad6959e34ae-1a" name="google-translate-customization"/>
+<meta content="é«å²¡å¸" name="author"/>
+<meta content="width=device-width, maximum-scale=3.0" name="viewport"/>
+<link href="/shared/style/default.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/shared/style/shared.css" media="all" rel="stylesheet" type="text/css"/>
+<link class="tmp_color" href="/shared/style/color/color0.css" id="tmp_color" media="all" rel="stylesheet" title="default" type="text/css"/>
+<link class="tmp_color" href="/shared/style/color/color1.css" media="all" rel="alternate stylesheet" title="darkblue" type="text/css"/>
+<link class="tmp_color" href="/shared/style/color/color2.css" media="all" rel="alternate stylesheet" title="yellow" type="text/css"/>
+<link class="tmp_color" href="/shared/style/color/color3.css" media="all" rel="alternate stylesheet" title="black" type="text/css"/>
+<link href="/shared/templates/top/style/edit.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/shared/style/smartphone.css" id="tmp_smartphone_css" media="only screen and (max-width : 600px)" rel="stylesheet" type="text/css"/>
+<link href="/tsushin/bosai/kinkyu/kinkyu.xml" rel="alternate" title="é«å²¡å¸ ç·æ¥ã»ç½å®³æå ±" type="application/rss+xml"/>
+<link href="/oshirase/oshirase.xml" rel="alternate" title="é«å²¡å¸ ãç¥ãã" type="application/rss+xml"/>
+<link href="/shinchaku/shinchaku.xml" rel="alternate" title="é«å²¡å¸ æ°çæå ±" type="application/rss+xml"/>
+<link href="/shared/images/favicon/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<script src="/shared/js/jquery.js" type="text/javascript"></script>
+<script src="/shared/js/gd.js" type="text/javascript"></script>
+<script src="/shared/js/setting_head.js" type="text/javascript"></script>
+<!--slideã¹ã©ã¤ãã·ã§ã¼-->
+<style type="text/css">
+.used_javascript .header_top #tmp_header,.header_top #tmp_header{position:relative;}
+ul.topimg li {position:absolute;top:0;list-style:none} 
+#tmp_header_cnt {
+z-index: 9999;
+position: relative;
+font-size:0;
+}
+#tmp_query{font-size:14px}
+.format_top #tmp_means {
+margin-top: 0;
+padding: 8px 0 8px 16px;
+background: url(/shared/images/slide/img/window.png) top repeat-x;
+background: rgba(255,255,255,.7);
+border: 2px #fffffa solid;
+border-top: none;
+border-radius: 0 0 10px 10px;
+}
+.bx-wrapper{
+position: relative;
+top: -72px;
+}</style>
+<!--slideã¹ã©ã¤ãã·ã§ã¼end-->
+<script src="/shared/js/ga.js" type="text/javascript"></script>
+</head>
+<body class="format_top">
+<script src="/shared/js/setting_body.js" type="text/javascript"></script>
+<div id="tmp_wrapper">
+<noscript>
+<p>ãã®ãµã¤ãã§ã¯JavaScriptãä½¿ç¨ããã³ã³ãã³ãã»æ©è½ãæä¾ãã¦ãã¾ããJavaScriptãæå¹ã«ããã¨ãå©ç¨ããã ãã¾ãã</p>
+</noscript>
+<p><a class="skip" href="#tmp_honbun">æ¬æã¸ã¹ã­ãããã¾ãã</a></p>
+<div id="tmp_model_change_pub">
+<ul>
+<li id="tmp_switch_pc_style"><a href="javascript:void(0);"><span>PCç</span></a> </li>
+<li id="tmp_switch_sp_style"><a href="javascript:void(0);"><span>ã¹ãã¼ããã©ã³ç</span></a> </li>
+</ul>
+</div>
+<div class="header_top" id="tmp_wrap_header">
+<div id="tmp_header">
+<div id="tmp_header_cnt">
+<div id="tmp_hlogo">
+<h1><span>é«å²¡å¸å¬å¼ãã¼ã ãã¼ã¸ ã»ã£ã¨ãããé«å²¡</span></h1>
+</div>
+<div id="tmp_means">
+<div id="tmp_means_primary"><dl id="tmp_func_txt"><dt><img alt="æå­ãµã¤ãº" height="22" src="/shared/images/header/func_txt_ttl.gif" width="75"/> </dt><dd><a class="text_size_down" href="javascript:void(0);"><span>ç¸®å°</span></a> </dd><dd><a class="text_size_normal" href="javascript:void(0);"><span>æ¨æº </span></a></dd><dd><a class="text_size_up" href="javascript:void(0);"><span>æ¡å¤§</span></a> </dd></dl>
+<ul class="hnavi">
+<li class="hnavi_list01"><a href="/ac/index.html"><span>è²åãã®å¤æ´</span></a> </li>
+<li class="hnavi_list02" lang="en" xml:lang="en"><a href="/foreignlanguage/index.html"><span>Foreign Language</span></a> </li>
+<li class="hnavi_list03 last"><a href="/ketai/index.html"><span>æºå¸¯ãµã¤ã</span></a> </li>
+</ul>
+</div>
+<div id="tmp_means_secondary">
+<div id="tmp_search">
+<form action="/search/result.html" id="tmp_gsearch" name="tmp_gsearch">
+<dl><dt><label for="tmp_query"><img alt="ãµã¤ãåæ¤ç´¢" height="22" src="/shared/images/header/func_sch_ttl.gif" width="21"/></label> </dt><dd>
+<p><input id="tmp_query" name="q" size="31"/> </p>
+<p><input id="tmp_func_sch_btn" name="sa" type="submit" value="æ¤ç´¢"/> </p>
+<p id="tmp_search_hidden"><input name="cx" type="hidden" value="001306138102626854335:gj0ayt6sj0s"/> <input name="ie" type="hidden" value="UTF-8"/> <input name="cof" type="hidden" value="FORID:9"/> </p>
+</dd></dl>
+</form>
+</div>
+<ul class="hnavi">
+<li class="hnavi_list01"><a href="/kensaku/index.html"><span>æ¤ç´¢æ¹æ³</span></a> </li>
+<li class="hnavi_list02"><a href="/sitemap.html"><span>ãµã¤ãããã</span></a> </li>
+<li class="hnavi_list03"><a href="/hisho/shise/gaiyo/soshiki/index.html"><span>çµç¹æ¡å</span></a> </li>
+</ul>
+</div>
+</div>
+</div>
+<!--slideã¹ã©ã¤ãã·ã§ã¼-->
+<!--ul class="topimg">
+<li--><a href="https://www.city.takaoka.toyama.jp/saigai/shien_taiou.html" style="position: absolute;display: block;top:0" target="_blank"><img alt="" src="/shared/images/slide/img/2.jpg"/></a><!--/li>
+</ul-->
+<!--slide endã¹ã©ã¤ãã·ã§ã¼-->
+<div id="tmp_hnavi_s">
+<ul id="tmp_hnavi_lmenu">
+<li id="tmp_hnavi_lmenu01"><a href="javascript:void(0);"><span>æ¤ç´¢</span></a> </li>
+<li id="tmp_hnavi_lmenu02"><a href="javascript:void(0);"><span>è¨­å®</span></a> </li>
+</ul>
+<p id="tmp_hnavi_rmenu"><a href="javascript:void(0);"><span>ã¡ãã¥ã¼</span></a></p>
+</div>
+</div>
+</div>
+<div id="tmp_wrap_gnavi">
+<div id="tmp_gnavi">
+<ul>
+<li id="tmp_glist1"><a href="/index.html"><span>ãã¼ã </span></a> </li>
+<li id="tmp_glist2"><a href="/bosai/index.html"><span>é²ç½ã»é²ç¯</span></a> </li>
+<li id="tmp_glist3"><a href="/kurashi/index.html"><span>æ®ãã</span></a> </li>
+<li id="tmp_glist4"><a href="/kenko/index.html"><span>å¥åº·ã»ç¦ç¥</span></a> </li>
+<li id="tmp_glist5"><a href="/kosodate/index.html"><span>å­è²ã¦ã»æè²</span></a> </li>
+<li id="tmp_glist6"><a href="/kanko/index.html"><span>è¦³åã»æåã»ã¹ãã¼ã</span></a> </li>
+<li id="tmp_glist7"><a href="/sangyo/index.html"><span>ç£æ¥­ã»ã¾ã¡ã¥ãã</span></a> </li>
+<li id="tmp_glist8"><a href="/shise/index.html"><span>å¸æ¿æå ±</span></a> </li>
+</ul>
+</div>
+</div>
+<div class="column_full" id="tmp_wrap_main">
+<div id="tmp_wrap_main2">
+<p class="skip" id="tmp_honbun">ããããæ¬æã§ãã</p>
+<div id="tmp_emergency">
+<div id="tmp_emergency_ttl">
+<h2><img alt="ç·æ¥ã»ç½å®³æå ±" height="30" src="/shared/images/main/emergency/emergency_ttl.jpg" width="200"/></h2>
+</div>
+<div id="tmp_emergency_cnt">
+<table class="list_table">
+<tr>
+<td class="date"><p>1æ6æ¥</p></td>
+<td><p><a href="/matome.html">ä»¤å6å¹´è½ç»åå³¶å°éé¢é£æå ±ã¾ã¨ããã¼ã¸ã¯ãã¡ã</a> </p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ9æ¥</p></td>
+<td><p><a href="/hinanzyo01011.html">é¿é£æã®éè¨­ã«ã¤ãã¦ï¼1æ9æ¥13æ00åç¾å¨ï¼</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ11æ¥</p></td>
+<td><p><a href="/060111dejimappu.html">ããã¸ãããï¼ ãããããã¸ã®ãä»¤å6å¹´è½ç»åå³¶å°éé¢é£æå ±ãã®æ²è¼ã«ã¤ãã¦</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ11æ¥</p></td>
+<td><p><a href="/jishinmuryouhouritusoudan.html">å¯å±±çå¼è­·å£«ä¼ã«ããè¢«ç½èåãç¡ææ³å¾ç¸è«çªå£ãéè¨­ï¼1æ11æ¥ã12æ¥ï¼</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ9æ¥</p></td>
+<td><p><a href="/060109gakuyouhinhozyo.html">ä»¤åï¼å¹´è½ç»åå³¶å°éã§åªå¤±åã¯ãæç­ããå­¦ç¨åã«ã¤ãã¦</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ9æ¥</p></td>
+<td><p><a href="/suidoutoiawasesaki.html">ä¸ä¸æ°´éã«é¢ããå¤éã®ãååãåã«ã¤ãã¦</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ9æ¥</p></td>
+<td><p><a href="/hijikanhennkoushisetsu0106.html">å¬å±æ½è¨­ã®éé¤¨æ¥ã»éé¤¨æéç­ã®å¤æ´ã«ã¤ãã¦</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ10æ¥</p></td>
+<td><p><a href="/jyuutakusyuuri.html">å°éã«ããèªå®ã®å®¶å±ããæºåå£ä»¥ä¸ï¼ç¸å½ï¼ãã®è¢«å®³ãåããæ¹ã¸ï¼ç¸è«çªå£ã®éè¨­ï¼</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ9æ¥</p></td>
+<td><p><a href="/kyusui.html">å°éã«ããå®åæ¼æ°´ãã¦ããæ¹ã®çµ¦æ°´ã«ã¤ãã¦</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ5æ¥</p></td>
+<td><p><a href="/060112syouboutei.html">ãä»¤å6å¹´é«å²¡å¸æ¶é²èã»ä¼æ¨æµ·ä¸ä¿å®é¨å·¡è¦èåååºåå¼ãã®ä¸­æ­¢ã«ã¤ãã¦</a> </p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ9æ¥</p></td>
+<td><p><a href="/yakantoire.html">ä¼æ¨å°åºã»åä¹å°åºã§å¤éã«å©ç¨å¯è½ãªãã¤ã¬ã«ã¤ãã¦</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ5æ¥</p></td>
+<td><p><a href="/fusikitikudansuihukyuu.html">ä¼æ¨å°åºã«ãããæ­æ°´ã®å®å¨å¾©æ§ã«ã¤ãã¦</a> </p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ5æ¥</p></td>
+<td><p><a href="/school/bosai/shigyousiki0601.html">é«å²¡å¸ç«å­¦æ ¡ã®ç¬¬ï¼å­¦æå§æ¥­å¼ï¼ï¼æï¼æ¥ï¼ç«ï¼ï¼ã«ã¤ãã¦</a> </p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ6æ¥</p></td>
+<td><p><a href="/shienn.html">ä»èªæ²»ä½ç­ããã®æ¯æ´</a> </p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ4æ¥</p></td>
+<td><p><a href="/ootatikusuidouhukyu.html">å¤ªç°å°åºã«ãããæ­æ°´ã®å®å¨å¾©æ§ã«ã¤ãã¦</a> </p></td>
+</tr>
+</table>
+<div class="related_btn">
+<p class="read_all"><a href="/bosai/kinkyu/index.html"><img alt="ç·æ¥ã»ç½å®³æå ±ä¸è¦§ãè¦ã" height="26" src="/shared/images/main/emergency/emergency_list_btn.jpg" width="200"/></a></p>
+<p><a href="/tsushin/bosai/kinkyu/kinkyu.xml"><img alt="ç·æ¥ã»ç½å®³æå ±RSSãè¦ã" height="26" src="/shared/templates/top/images/rss_btn.jpg" width="70"/></a></p>
+</div>
+</div>
+</div>
+<div id="tmp_main">
+<div class="wrap_col_nm">
+<div class="wrap_col_nm2">
+<div class="col_nm">
+<div class="wrap_col_lft_navi">
+<div class="col_lft_navi">
+<div class="lnavi_list2_ttl">
+<h2><img alt="ãããã®ã¨ãã¯" height="30" src="/shared/images/navi/lnavi/moshimo_ttl.jpg" width="200"/></h2>
+</div>
+<div class="lnavi_list2_cnt">
+<ul>
+<li><a href="https://takaoka-city.site2.ktaiwork.jp/"><img alt="kinkyuu" height="38" src="/library_images/kinkyu.png" width="150"/></a> </li>
+<li><a href="/kenzo/kenko/iryo/kyukan/index.html">ä¼æ¥ã»å¤éè¨ºç</a> </li>
+<li><a href="/somu/bosai/bosai/hinanjo/hinanjo.html">é¿é£å ´æ</a> </li>
+<li><a href="/seikatsu/shiminsodan/index.html">ç¸è«çªå£</a> </li>
+<li><a href="http://www.takaokafire.jp/takaoka/saigai/index.html">ç«ç½ç­çºçç¶æ³</a> </li>
+<li><a href="/doboku/dobokukasen.html">æ²³å·ã®ç¶æ³</a>  </li>
+</ul>
+</div>
+<ul class="navi_btn navi_01"><br/>
+<li id="tmp_navi_btn1"><a href="/shise/gaiyo/shicho/index.html"><span>ããããå¸é·å®¤ã¸</span></a> </li>
+<li id="tmp_navi_btn2"><a href="/shise/shigikai/index.html"><span>é«å²¡å¸è­°ä¼</span></a> </li>
+<li id="tmp_navi_btn3"><a href="/hisho/shise/gaiyo/gaiyo.html"><span>é«å²¡å¸ã®ãã­ãã£ã¼ã«</span></a> </li>
+<li id="tmp_navi_btn4"><a href="/syoubun/shise/gaiyo/song.html"><span>é«å²¡å¸æ°ã®æ­</span></a> </li>
+</ul>
+<div class="lnavi_list" id="tmp_lnavi_oyakudachi">
+<div class="lnavi_list_ttl">
+<h2><span>ãå½¹ç«ã¡ãµã¼ãã¹</span></h2>
+<p class="nav_btn"><a href="javascript:void(0);"><span>ééãã¿ã³</span></a></p>
+</div>
+<div class="lnavi_list_cnt">
+<ul>
+<li><a href="/shimin/kurashi/koseki/madoguchi/konnzatu.html">å¸æ°èª²çªå£ã®æ··éç¶æ³</a> </li>
+<li><a href="/kentiku/kurashi/jutaku/koe/akisitujoho.html">å¸å¶ä½å®ç­ã®ç©ºå®¤æå ±</a> </li>
+<li><a href="/toshi/shintakaokaekityusyazyou.html" target="_blank">æ°é«å²¡é§å¨è¾ºé§è»å ´æå ±</a> </li>
+<li><a href="/joho/kurashi/mynumber/online_shinsei.html">é»å­ç³è«ãµã¼ãã¹</a> </li>
+<li><a href="/shinsesho/index.html">ç³è«æ¸ç­ãã¦ã³ã­ã¼ã</a> </li>
+<li><a href="/shise/nyusatsu/index.html">å¥æ­æå ±ãè¦ã</a> </li>
+<li><a href="/library/index.html">å³æ¸é¤¨ã®æ¬ãæ¢ã</a> </li>
+<li><a href="http://www.manabi-takaoka.jp/">å­¦ç¿æ½è¨­ãäºç´ãã</a> </li>
+<li><a href="/joho/webgis/webgis.html">å°å³æå ±ãµã¼ãã¹</a> </li>
+<li><a href="/kurashi/kotsu/kokyo/index.html">å¬å±äº¤éæ©é¢ãèª¿ã¹ã</a> </li>
+<li><a href="http://www1.g-reiki.net/takaoka/reiki_menu.html">æ¡ä¾ã»è¦åãèª¿ã¹ã</a> </li>
+<li><a href="/shise/link/index.html">ãªã³ã¯é</a> </li>
+<li><a href="/kentiku/kurashi/jutaku/akiya/ichiran.html">ç©ºãå®¶ã»ç©ºãå°æå ±ãã³ã¯</a> </li>
+</ul>
+</div>
+</div>
+<ul class="navi_btn navi_02">
+<li id="tmp_navi2_btn1"><a href="/cgi-bin/event_cal/cal_month.cgi"><span>ã¤ãã³ãã«ã¬ã³ãã¼</span></a> </li>
+<li id="tmp_navi2_btn2"><a href="/faq/index.html"><span>ããããè³ªå</span></a> </li>
+<li id="tmp_navi2_btn3"><a href="/shisetsu/index.html"><span>æ½è¨­æ¡å</span></a> </li>
+<li id="tmp_navi2_btn4"><a href="/jigyosha/index.html"><span>äºæ¥­èã®æ¹ã¸</span></a> </li>
+<li id="tmp_navi2_btn5"><a href="/shise/saiyo/index.html"><span>è·å¡æ¡ç¨æå ±</span></a> </li>
+<li id="tmp_navi2_btn6"><a href="/hisho/shise/gaiyo/chosha/guide/access2.html"><span>äº¤éã¢ã¯ã»ã¹</span></a> </li>
+<li id="tmp_navi2_btn7"><a href="/joho/shise/opendata/catalog.html" target="_blank"><span>ãªã¼ãã³ãã¼ã¿ããã¼</span> </a></li>
+</ul>
+</div>
+</div>
+<div class="wrap_col_main">
+<div class="col_main">
+<div id="tmp_maincontents"><div id="tmp_kurashi_sch">
+<div id="tmp_kurashi_sch_ttl">
+<h2><span>æ®ããã®ããããæ¤ç´¢</span></h2>
+<p class="nav_btn"><a href="javascript:void(0);"><span>ééãã¿ã³</span></a></p>
+</div>
+<div id="tmp_kurashi_sch_cnt">
+<ul>
+<li><a href="/kensaku/shussan/index.html"><img alt="åºç£ã»è²å" height="50" src="/shared/templates/top/images/kurashi_sch01.jpg" width="150"/></a> </li>
+<li><a href="/kensaku/nyuen/index.html"><img alt="å¥åã»å¥å­¦" height="50" src="/shared/templates/top/images/kurashi_sch02.jpg" width="150"/></a> </li>
+<li><a href="/kensaku/kekkon/index.html"><img alt="çµå©ã»é¢å©" height="50" src="/shared/templates/top/images/kurashi_sch03.jpg" width="150"/></a> </li>
+<li><a href="/kensaku/gomi/index.html"><img alt="ãã¿ããªãµã¤ã¯ã«" height="50" src="/shared/templates/top/images/kurashi_sch04.jpg" width="150"/></a> </li>
+<li><a href="/kensaku/hikkoshi/index.html"><img alt="å¼è¶ããä½ã¾ã" height="50" src="/shared/templates/top/images/kurashi_sch05.jpg" width="150"/></a> </li>
+<li><a href="/kensaku/shushoku/index.html"><img alt="å°±è·ã»éè·" height="50" src="/shared/templates/top/images/kurashi_sch06.jpg" width="150"/></a> </li>
+<li><a href="/kensaku/byoki/index.html"><img alt="çæ°ã»ãã" height="50" src="/shared/templates/top/images/kurashi_sch07.jpg" width="150"/></a> </li>
+<li><a href="/kensaku/kore/index.html"><img alt="é«é½¢ã»ä»è­·" height="50" src="/shared/templates/top/images/kurashi_sch08.jpg" width="150"/></a> </li>
+<li><a href="/kensaku/okuyami/index.html"><img alt="ãããã¿" height="50" src="/shared/templates/top/images/kurashi_sch09.jpg" width="150"/></a> </li>
+</ul>
+</div>
+</div>
+<div id="tmp_main_banner">
+<ul>
+<li><a href="/rekishitoshi/index.html"><img alt="æ­´å²é½å¸ ä¼çµ±ã¨æåã®ã¾ã¡" height="115" src="/shared/templates/top/images/rekishi_btn.jpg" width="154"/></a> </li>
+<li><a href="/kotsu/kurashi/kotsu/kokyo/shinkansen/index.html"><img alt="åé¸æ°å¹¹ç· å¹³æ27å¹´æ¥éæ¥­" height="115" src="/shared/templates/top/images/shinkansen_btn.jpg" width="154"/></a> </li>
+<li><a href="/daisuki/index.html"><img alt="ã ãããï¼é«å²¡ ããããããã£ã±ã" height="115" src="/shared/templates/top/images/daisuki_btn.jpg" width="154"/></a> </li>
+</ul>
+</div>
+<div id="tmp_info">
+<div class="info_list" id="tmp_info_oshirase">
+<div class="info_list_ttl">
+<h2 class="nav_btn"><a href="javascript:void(0);"><span>ãç¥ãã</span></a></h2>
+</div>
+<div class="info_list_cnt">
+<ul>
+<li><a href="/saigai/shien_taiou.html">ä»¤å6å¹´è½ç»åå³¶å°é æ¯æ´ã»å¯¾å¿ç­é¢é£æå ±</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></li>
+<li><a href="/kikaku/shise/kifu/furusato/saigaisien.html">ç½å®³æ¯æ´ã®ãé¡ãï¼ãµããã¨ç´ç¨ï¼</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></li>
+<li><a href="/kenko/kenko/ryuko/covid-19.html">æ°åã³ã­ãã¦ã¤ã«ã¹ææç(COVID-19)é¢é£æå ±</a> </li>
+<li><a href="/bosai/kinkyu/r50712ooamesaigaisien.html">ä»¤å5å¹´7æ12æ¥ããã®å¤§é¨ã«ããè¢«å®³ãåããå¸æ°ã®çæ§ã¸</a> </li>
+<li><a href="/doboku/kurashi/josetsu/otoiawase/josetu_oshirase.html">éè·¯é¤éªå¯¾ç­æ¬é¨ãè¨­ç½®ããã¾ãã</a> </li>
+</ul>
+<div class="related_btn">
+<p class="read_all"><a href="/oshirase/index.html"><img alt="ãç¥ããä¸è¦§ãè¦ã" height="26" src="/shared/templates/top/images/oshirase_btn.jpg" width="160"/></a></p>
+<p><a href="/oshirase/oshirase.xml"><img alt="ãç¥ããRSS" height="26" src="/shared/templates/top/images/rss_btn.jpg" width="70"/></a></p>
+</div>
+</div>
+</div>
+<div class="info_list" id="tmp_info_shinchaku">
+<div class="info_list_ttl">
+<h2 class="nav_btn"><a href="javascript:void(0);"><span>æ°çæå ±</span></a></h2>
+</div>
+<div class="info_list_cnt">
+<table class="list_table">
+<tr>
+<td class="date"><p>1æ11æ¥</p></td>
+<td><p><a href="/kenzo/yobousessyu/coronavaccine.html">æ°åã³ã­ãã¯ã¯ãã³ã®æ¥ç¨®ã«é¢ãããç¥ãã</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ10æ¥</p></td>
+<td><p><a href="/shobo/nyusatu/documents/documents/kyousounyuuusatu.html">ãåéãé«å²¡å¸å¬ç¨è»å£²å´ã®æ¡ä»¶ä»ä¸è¬ç«¶äºå¥æ­ãå®æ½ãã¾ã</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ10æ¥</p></td>
+<td><p><a href="/somu/hoppouryoudo.html">2æã¯ãåæ¹é åè¿ééåå¨å½å¼·èª¿æéãã§ã</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ10æ¥</p></td>
+<td><p><a href="/seikatsu/kurashi/shiminsodan/sodan.html">ä»æã»æ¥æã®ç¸è«æ¡åãæ´æ°ãã¾ãã</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ10æ¥</p></td>
+<td><p><a href="/kaigo/kaigoyobou.html">è¢«ç½ã«ãããé«é½¢èã®å¥åº·ç®¡çã«ã¤ãã¦</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ9æ¥</p></td>
+<td><p><a href="/kaigo/kenko/kaigo/keikakugoiken.html">é«å²¡å¸é«é½¢èä¿å¥ç¦ç¥è¨ç»ã»é«å²¡å¸ä»è­·ä¿éºäºæ¥­è¨ç»ï¼ç´ æ¡ï¼ã«å¯¾ãããæè¦ãåéãã¾ã</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ9æ¥</p></td>
+<td><p><a href="/kenzo/kenko/kenko/kenkouzousinkeikaku.html">é«å²¡å¸å¥åº·å¢é²è¨ç»ï¼ç´ æ¡ï¼ã«å¯¾ãããæè¦ãåéãã¾ã</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ9æ¥</p></td>
+<td><p><a href="/shimin/rinzimado2019.html">ãã¤ãã³ãã¼ã«ã¼ãç³è«ã»åãåãç­ã®è¨æçªå£ãéè¨­ãã¾ã</a> <img alt="æ°ç" src="/shared/system/images/icon_new.gif" style="vertical-align:middle;"/></p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ6æ¥</p></td>
+<td><p><a href="/kenzo/bosai/bosai/hisaisha/notohanntouzisinn/kokoro.html">è¢«ç½æã®ãããã®ã±ã¢</a> </p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ5æ¥</p></td>
+<td><p><a href="/kankou/kurashi/kotsu/chushajo/joho/kanko/index.html">è¦³åé§è»å ´</a> </p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ5æ¥</p></td>
+<td><p><a href="/hisho/shise/gaiyo/shicho/kaiken/index.html">ä»¤å6å¹´1æ5æ¥ å¸é·å®ä¾è¨èä¼è¦</a> </p></td>
+</tr>
+<tr>
+<td class="date"><p>1æ3æ¥</p></td>
+<td><p><a href="/syoubun/kanko/shogai/sejinshiki/r4.html">ä»¤å6å¹´é«å²¡å¸äºåæ­³ã®éãã«ã¤ãã¦ãç¥ãããã¾ã</a> </p></td>
+</tr>
+<tr>
+<td class="date"><p>12æ28æ¥</p></td>
+<td><p><a href="/kankyo/kankyo/denwa.html">é»è©±åç·å¾©æ§ã®ãç¥ããï¼é«å²¡å¸ã¹ããã¯ã¤ã¼ãï¼</a> </p></td>
+</tr>
+<tr>
+<td class="date"><p>12æ28æ¥</p></td>
+<td><p><a href="/jido/kosodate/shien/jidokan/fukuoka.html">ããµããããã©ãããã ããã1ã»2æå·ãæ²è¼ãã¾ãã</a> </p></td>
+</tr>
+<tr>
+<td class="date"><p>12æ28æ¥</p></td>
+<td><p><a href="/jido/kosodate/shien/jidokan/sebu.html">ãè¥¿é¨åç«¥ã»ã³ã¿ã¼ã ããã1ã»2æå·ãæ²è¼ãã¾ãã</a> </p></td>
+</tr>
+</table>
+<div class="related_btn">
+<p class="read_all"><a href="/shinchaku/index.html"><img alt="æ°çæå ±ä¸è¦§ãè¦ã" height="26" src="/shared/templates/top/images/shinchaku_btn.jpg" width="160"/></a></p>
+<p><a href="/shinchaku/shinchaku.xml"><img alt="æ°çæå ±RSS" height="26" src="/shared/templates/top/images/rss_btn.jpg" width="70"/></a></p>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="wrap_col_rgt_navi">
+<div class="col_rgt_navi">
+<div id="tmp_rnavi_ban">
+<ul class="navi_btn">
+<li><a href="http://www.takaoka.or.jp/"><img alt="ã¿ã¡ããã¹" height="100" src="/library_images/michishirube200-100-1.jpg" width="200"/></a> </li>
+<li><a href="/kankou/kanko/kanko/syokoujimatome.html"><img alt="0615syokoji.jpg" height="50" src="/library_images/0615syokoji.jpg" width="200"/></a> </li>
+<li><a href="/shise/koho/prdouga.html" target="_blank"><img alt="miryokudouga" height="50" src="/library_images/miryokudouga.jpg" width="200"/></a> </li>
+<li><a href="/jinji/shise/saiyo/shokuin-bosyu/bosyu.html" target="_blank"><img alt="syokuinbosyu111" height="50" src="/library_images/syokuinbosyu111.jpg" width="200"/></a> </li>
+<li><a href="/keiei/shise/shisaku/sdgs/sdgs_partnar.html"><img alt="sdgs031208" height="50" src="/library_images/sdgs031208.jpg" width="200"/></a> </li>
+<li><a href="/hisho/publiccomments/index.html"><img alt="ããã³ã¡ããã¼" height="54" src="/library_images/pabukomebana.jpg" width="200"/></a> </li>
+<li><a href="/kikaku/shise/kifu/furusato/index.html"><img alt="ãµããã¨ç´ç¨ããã¼" height="54" src="/library_images/furusatobana.jpg" width="200"/></a> </li>
+<li><a href="https://takaokalife.jp/"><img alt="ç§»ä½å®ä½ä¿é²" height="50" src="/library_images/izixyuu.jpg" width="200"/></a> </li>
+<li><a href="/bunka/furusato-manyo.html"><img alt="manyou0127" height="50" src="/library_images/manyou0127.jpg" width="200"/></a> </li>
+<li><a href="/bunka/bunsou/dora/matome.html"><img alt="doraemonbana" height="50" src="/library_images/doraemonbana.jpg" width="200"/></a> </li>
+<li><a href="http://bunkasouzou-takaoka.jp/"><img alt="bunkasouzou" height="50" src="/library_images/bunkasouzou.jpg" width="200"/></a> </li>
+<li><a href="/jido/nenet.html"><img alt="nenextuto" height="50" src="/library_images/nenextuto.jpg" width="200"/></a> </li>
+<li><a href="https://toyama.vtfm.jp/"><img alt="ã¨ãã¾ã­ã±ã¼ã·ã§ã³ã·ã¹ãã " height="50" src="/library_images/toyamalocation.jpg" width="200"/></a> </li>
+<li><a href="http://toyamagosei.jp/"><img alt="ã¨ãã¾åè¥¿ååé£æºä¸­æ¢é½å¸åæå ±çºä¿¡ãµã¤ãããã¼" height="50" src="/library_images/b_takaoka.png" width="200"/></a> </li>
+</ul>
+</div>
+<div id="tmp_cnt_news">
+<div class="box_news" id="tmp_rnavi_news">
+<div id="tmp_rnavi_news_ttl">
+<h2><a href="/hisho/koho/hodo/mottohot/index.html"><span>ãã£ã¨ããã é«å²¡ãã¥ã¼ã¹</span></a> </h2>
+</div>
+<div id="tmp_rnavi_news_cnt">
+<p><img alt="" height="120" src="/images/thumb/20483.jpg" width="160"/></p>
+<p align="left"><a href="/hisho/shise/koho/hodo/mottohot/2023mottohot/ehondrive.html">æãå¥ãã®ããçµµæ¬ãæ¨ã¦ãã«ã¤ãªãã</a></p>
+<p align="left"><a href="/shise/koho/hodo/mottohot/mottohot_rss.xml"><img alt="RSSãã¿ã³" height="26" src="/library_images/rss_btn.jpg" width="70"/></a></p>
+</div>
+</div>
+<div id="tmp_rnavi_koho">
+<div id="tmp_rnavi_koho_ttl">
+<h2><span>å¸æ°ã¨å¸æ¿</span></h2>
+</div>
+<div id="tmp_rnavi_koho_cnt">
+<p><a href="/hisho/shise/koho/kohoshi/shisetop/index.html"><img alt="0601hyosi-01.png" height="212" src="/library_images/0601hyosi-01.png" width="150"/></a></p>
+<p><a href="/hisho/shise/koho/kohoshi/shisetop/index.html">åºå ±ç´ãå¸æ°ã¨å¸æ¿ã</a></p>
+</div>
+</div>
+</div>
+<div class="lnavi_list" id="tmp_lnavi_shiro">
+<div class="lnavi_list_ttl">
+<h2><span>é«å²¡å¸ãç¥ããï¼</span></h2>
+<p class="nav_btn"><a href="javascript:void(0);"><span>ééãã¿ã³</span></a></p>
+</div>
+<div class="lnavi_list_cnt">
+<ul>
+<li><a href="/bangumi-sns/index.html">åºå ±ã»çªçµã»SNS</a> </li>
+</ul>
+</div>
+</div>
+<div id="tmp_lnavi_sanka">
+<div class="lnavi_list_ttl">
+<h2><span>ã¿ããªã§åå ãããï¼</span></h2>
+<p class="nav_btn"><a href="javascript:void(0);"><span>ééãã¿ã³</span></a></p>
+</div>
+<div class="lnavi_list_cnt">
+<ul>
+<li><a href="/hisho/shise/kocho/goiken/otazune/index2.html">ãããã­ã»ãæè¦</a> </li>
+<li><a href="/hisho/publiccomments/index.html">ãããªãã¯ã³ã¡ã³ã </a>ãã ã </li>
+<li><a href="/hisho/shise/koho/demae/machizukuri.html">åºåè¬åº§</a> ã </li>
+<li><a href="/kurashi/kyodo/index.html">å¸æ°æ´»åã»å¸æ°åå</a> </li>
+<li><a href="/hisho/shise/johosesaku/chiikiportal.html">å°åãã¼ã¿ã«ãµã¤ã</a> </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tmp_wrap_publicity">
+<div id="tmp_publicity">
+<div id="tmp_publicity2">
+<div id="tmp_publicity_ttl">
+<p><img alt="åºåæ¬" height="20" src="/shared/images/main/publicity/publicity_ttl.gif" width="80"/></p>
+<p><a href="/hisho/shise/kokoku/hpbosyu.html">åºåã®åéã«ã¤ãã¦</a></p>
+</div>
+<div id="tmp_publicity_cnt"><script src="/shared/system/js/common/utility.js" type="text/javascript"></script>
+<script src="/shared/system/js/banner/banner_rand_prev.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+document.write('<div id="advert_area_0" class="banner"></div>');
+var advert_0 = new KoukokuPublish();
+advert_0.LoadData(0,1);
+//-->
+</script><noscript><p><a href="/banner/1/banner_list_1.html">åºåä¸è¦§ãã¼ã¸ã¸</a></p></noscript></div>
+<p class="note">â»åºåããã¼åã³ãã®ãªã³ã¯åã®ãã¼ã ãã¼ã¸ã®åå®¹ã«ã¤ãã¦ã¯é«å²¡å¸ãä¿è¨¼ãããã®ã§ã¯ããã¾ããã</p>
+</div>
+</div>
+</div>
+<div id="tmp_wrap_footer">
+<div id="tmp_footer">
+<ul class="fnavi" id="tmp_fnavi">
+<li><a href="/sitemap.html">ãµã¤ãããã</a> </li>
+<li><a href="/sitepolicy/index.html">ãµã¤ãããªã·ã¼</a> </li>
+<li><a href="/accessibility/index.html">ã¦ã§ãã¢ã¯ã»ã·ããªãã£æ¹é</a> </li>
+</ul>
+<div id="tmp_footer_cnt">
+<address>é«å²¡å¸å½¹æ <br/>
+ã933-8601 å¯å±±çé«å²¡å¸åºå°è·¯7-50 <br/>
+é»è©±çªå·ï¼0766-20-1111</address>
+<address>åä»æéï¼åå8æ30åï½åå¾5æ15åï¼ãã ããåæ¥ãå½æ°ã®ç¥æ¥ãå¹´æ«å¹´å§12æ29æ¥ï½1æ3æ¥ãé¤ãï¼<br/>
+â»é¨ç½²ãæ½è¨­ã«ãã£ã¦ã¯ãåä»æéãªã©ãç°ãªãã¨ãããããã¾ã</address>
+<address> </address>
+<ul class="fnavi" id="tmp_fnavi2">
+<li id="tmp_fnavi2_01"><a href="/shise/gaiyo/madoguchi/index.html"><span>å¸å½¹ææ¡å</span></a> </li>
+<li id="tmp_fnavi2_02"><a href="/hisho/shise/kocho/goiken/otazune/index2.html"><span>ãåãåãã</span></a> </li>
+<li id="tmp_fnavi2_03"><a href="/hisho/shise/gaiyo/chosha/guide/access2.html"><span>äº¤éã¢ã¯ã»ã¹</span></a> </li>
+</ul>
+</div>
+</div>
+</div>
+<div id="tmp_wrap_copyright">
+<div id="tmp_copyright">
+<p>Copyright © TAKAOKA City All rights Reserved. </p>
+</div>
+</div>
+</div>
+<script src="/shared/js/setting_responsive.js" type="text/javascript"></script>
+<script src="/shared/js/g_translate.js" type="text/javascript"></script>
+<script src="/shared/js/setting_onload.js" type="text/javascript"></script>
+<!--slideã¹ã©ã¤ãã·ã§ã¼-->
+<script src="/shared/js/jquerymin.js" type="text/javascript"></script>
+<script src="/shared/js/jquerybxslidermin.js" type="text/javascript"></script>
+<!--slideã¹ã©ã¤ãã·ã§ã¼end-->
+</body>
+</html>
