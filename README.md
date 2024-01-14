@@ -25,6 +25,7 @@
 4. cv2
 5. requests
 6. ssl
+7. slack-sdk
 
 ### 0. Download this project and go to the folder with CMD
 ```
@@ -48,3 +49,7 @@ python app.py
 ```
 pip freeze > requirements.txt
 ```
+
+## Refrence
+### python-slack-sdk
+https://slack.dev/python-slack-sdk/webhook/index.html

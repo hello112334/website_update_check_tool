@@ -48,6 +48,9 @@ from selenium.webdriver.common.by import By
 # from webdriver_manager.microsoft import EdgeChromiumDriverManager
 # from webdriver_manager.firefox import GeckoDriverManager
 
+# slack
+from slack_sdk.webhook import WebhookClient
+
 # numpy
 import numpy as np
 
@@ -58,27 +61,57 @@ option = Options()
 option.add_argument("--window-size=1400,960")
 
 # Parameters
-output_folder = "output"
+OUTPUT_PATH = "output"
+WEB_HOOK_URL = ""
+
+# slack class
+class Info_news_slack:
+    """
+    自治体サイト更新通知アプリSlack
+    """
+    def __init__(self):
+        """note"""
+        self.webhook = WebhookClient(WEB_HOOK_URL)
+        self.update_status = []
+
+    def update_status(self, text):
+        """note"""
+        self.update_status.append(text)
+
+    def send(self, now_str):
+        """note"""
+        # update_statusからmd形式のテキスト
+        text = ""
+
+        # 基本情報
+        text += f"[{now_str}][更新情報]\n"
+
+        # 更新状況
+        if len(self.update_status) > 0:
+            for i in range(len(self.update_status)):
+                text += f"{self.update_status[i]}\n"
+        else:
+            text += "更新なし\n"
+        
+        # テキストを送信
+        response = self.webhook.send(
+            text="fallback",
+            blocks=[
+                {
+                    "type": "section",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": text
+                    }
+                }
+            ]
+        )
+
+        return response
 
 def main():
     """note"""
     
-
-# def window_switch(id):
-#     """note"""
-#     # ウィンドウハンドルのリストを取得
-#     window_handles = driver.window_handles
-#     print(window_handles[id])
-
-#     # 2つ目のタブ（新しく開いたタブ）に切り替え
-#     driver.switch_to.window(window_handles[id])
-
-# def click_button(get_id):
-#     """note"""
-#     btn = driver.find_element(By.ID , get_id)
-#     btn.click()
-#     sleep_random(2)
-
 def sleep_random(sec):
     """note"""
 
@@ -100,18 +133,18 @@ def init(i, city, town):
     print(f"[INFO][{i}] INIT")
 
     # create folder
-    os.makedirs(f"{output_folder}/{city}/{town}", exist_ok=True)
+    os.makedirs(f"{OUTPUT_PATH}/{city}/{town}", exist_ok=True)
 
 def get_txt(city, town, filename):
     """note"""
-    f =  open(f"{output_folder}/{city}/{town}/{filename}.txt", mode='r', encoding='utf-8')
+    f =  open(f"{OUTPUT_PATH}/{city}/{town}/{filename}.txt", mode='r', encoding='utf-8')
     data = f.read()
 
     return data
 
 def save_txt(city, town, text, filename):
     """note"""
-    with open(f"{output_folder}/{city}/{town}/{filename}.txt", mode='w', encoding='utf-8') as f:
+    with open(f"{OUTPUT_PATH}/{city}/{town}/{filename}.txt", mode='w', encoding='utf-8') as f:
         f.write(text)
 
 def check_update(i, city, town, text, now_str):
@@ -123,12 +156,12 @@ def check_update(i, city, town, text, now_str):
     city, town (str): Parameters used in the get_txt function.
     text (str): The current text data to compare.
     now_str (str): The current update timestamp.
-    output_folder (str): Path to the folder containing the CSV file.
+    OUTPUT_PATH (str): Path to the folder containing the CSV file.
 
     Returns:
     None: The function updates the CSV file in place.
     """
-    update_list_path = f"{output_folder}/update_list.csv"
+    update_list_path = f"{OUTPUT_PATH}/update_list.csv"
 
     # Load the CSV file
     df = pd.read_csv(update_list_path, header=0, dtype=str)
@@ -141,6 +174,7 @@ def check_update(i, city, town, text, now_str):
         df[now_str] = ""
 
     # Update only if last_update is not NaN and current data is different from last data
+    update_status = False
     if not pd.isna(df.at[i, 'last_update']):
         if now_str != df.at[i, 'last_update']:
             # Retrieve the last update timestamp
@@ -158,13 +192,16 @@ def check_update(i, city, town, text, now_str):
             df.at[i, now_str] = check_result
 
             # 画像を比較して差分をハイライト
-            last_image = f"{output_folder}/{city}/{town}/{last_update}.png"
-            current_image = f"{output_folder}/{city}/{town}/{now_str}.png"
-            checked_image = f"{output_folder}/{city}/{town}/{now_str}_checked.png"
+            last_image = f"{OUTPUT_PATH}/{city}/{town}/{last_update}.png"
+            current_image = f"{OUTPUT_PATH}/{city}/{town}/{now_str}.png"
+            checked_image = f"{OUTPUT_PATH}/{city}/{town}/{now_str}_checked.png"
             compare_and_highlight_diff(last_image, current_image, checked_image)
 
             df.at[i, 'last_update'] = now_str
 
+            # 更新結果
+            if not check_result:
+                update_status = True
     else:
         # If last_update is NaN, mark as "-"
         df.at[i, now_str] = "-"
@@ -175,6 +212,8 @@ def check_update(i, city, town, text, now_str):
 
     # Save the updated DataFrame back to CSV
     df.to_csv(update_list_path, index=False)
+    
+    return update_status
 
 def compare_and_highlight_diff(img1_path, img2_path, output_path):
     """note"""
@@ -222,6 +261,9 @@ if __name__ == '__main__':
         JST = datetime.timezone(t_delta, 'JST')
         now = datetime.datetime.now(JST)
         now_str = str(now.strftime('%Y%m%d%H'))
+
+        # Slack init - 自治体サイト更新通知アプリ
+        info_news_slack = Info_news_slack()
 
         # Listを取得する
         datalist = get_list()
@@ -289,13 +331,13 @@ if __name__ == '__main__':
                     current_height += img.height
 
                 # 画像を保存
-                combined_image.save(f"{output_folder}/{city_name}/{town_name}/{now_str}.png")
+                combined_image.save(f"{OUTPUT_PATH}/{city_name}/{town_name}/{now_str}.png")
 
                 # 更新チェック
                 print(f"[INFO][{i}] 更新チェック")
-                check_update(i, city_name, town_name, soup_utf8, now_str)
-
-                # driver.save_screenshot(f"{output_folder}/{city_name}/{town_name}/{now_str}.png")
+                update_status = check_update(i, city_name, town_name, soup_utf8, now_str)
+                if update_status:
+                    info_news_slack.update_status(f"[{i+1}] {city_name} {town_name} {get_url}")
 
                 # ブラウザを閉じる
                 driver.quit()
@@ -306,6 +348,9 @@ if __name__ == '__main__':
 
     except Exception as err:
         print("[ERROR] {0}".format(err))
+
     finally:
-        
+        # 結果をSlackに送信
+        info_news_slack.send(now_str)
+
         print(f"[INFO] END {'-'*10}")
