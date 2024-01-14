@@ -57,12 +57,16 @@ import numpy as np
 # datetimeモジュールを使用
 import datetime
 
+# env
+from dotenv import load_dotenv
+load_dotenv()
+
 option = Options()
 option.add_argument("--window-size=1400,960")
 
 # Parameters
-OUTPUT_PATH = "output"
-WEB_HOOK_URL = ""
+OUTPUT_PATH = os.getenv('OUTPUT_PATH')
+WEB_HOOK_URL = os.getenv('WEB_HOOK_URL')
 
 # slack class
 class Info_news_slack:
