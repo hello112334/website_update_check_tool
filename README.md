@@ -39,7 +39,12 @@ pip install -r requirements.txt
 
 or you can just pickup packages you need
 
-### 2. python script.py
+### 2. Set parameter in .env
+1. OUTPUT_PATH
+2. WEB_HOOK_URL 
+3. OPENAI_API_KEY 
+
+### 3. python script.py
 ```
 python app.py
 ```
