@@ -4,7 +4,6 @@ website update check
 """
 # Basic
 import os
-# import sys
 import time
 import random
 import pandas as pd
@@ -14,11 +13,7 @@ import ssl
 # Scrapy
 import requests
 from bs4 import BeautifulSoup
-# requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL'
-# requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS = 'ALL:@SECLEVEL=1'
 from requests.adapters import HTTPAdapter
-# import urllib3
-# from urllib3.poolmanager import PoolManager
 
 class SSLAdapter(HTTPAdapter):
     def init_poolmanager(self, *args, **kwargs):
@@ -38,15 +33,7 @@ import time
 
 # selenium
 from selenium import webdriver
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.edge.service import Service
-from selenium.webdriver.common.by import By
-# webdriver_manager
-# from webdriver_manager.chrome import ChromeDriverManager
-# from webdriver_manager.microsoft import EdgeChromiumDriverManager
-# from webdriver_manager.firefox import GeckoDriverManager
 
 # slack
 from slack_sdk.webhook import WebhookClient
@@ -125,7 +112,7 @@ def sleep_random(sec):
 def get_list():
     """note"""
     # リストをnpで取得
-    df = pd.read_csv('list.csv', header=0, dtype=str)
+    df = pd.read_csv('list.csv', header=0, dtype=str, encoding='shift_jis')
 
     # リストをリスト型に変換
     list = df.values.tolist()
@@ -168,7 +155,7 @@ def check_update(i, city, town, text, now_str):
     update_list_path = f"{OUTPUT_PATH}/update_list.csv"
 
     # Load the CSV file
-    df = pd.read_csv(update_list_path, header=0, dtype=str)
+    df = pd.read_csv(update_list_path, header=0, dtype=str, encoding='utf-8')
 
     print(f"[INFO][{i}] now_str: {now_str}")
 
@@ -265,6 +252,7 @@ if __name__ == '__main__':
         JST = datetime.timezone(t_delta, 'JST')
         now = datetime.datetime.now(JST)
         now_str = str(now.strftime('%Y%m%d%H'))
+        now_str2 = str(now.strftime('%Y年%m月%d日%H時'))
 
         # Slack init - 自治体サイト更新通知アプリ
         info_news_slack = Info_news_slack()
@@ -291,8 +279,6 @@ if __name__ == '__main__':
                 print(f"[INFO][{i}] URL : {get_url}")
 
                 # ブラウザのHTMLを取得
-                # requests.packages.urllib3.contrib.pyopenssl.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL'
-                # html = requests.get(get_url, verify=False)
                 html = session.get(get_url)
 
                 # html.encoding = 'shift_jis'  # 文字コード
@@ -310,7 +296,6 @@ if __name__ == '__main__':
                 # ブラウザのHTMLを取得
                 save_txt(city_name, town_name, soup_utf8, now_str)
 
-                # screenshotを取得する
                 # ページの高さを取得
                 total_height = driver.execute_script("return document.body.scrollHeight")
 
@@ -355,6 +340,6 @@ if __name__ == '__main__':
 
     finally:
         # 結果をSlackに送信
-        info_news_slack.send(now_str)
+        # info_news_slack.send(now_str2)
 
         print(f"[INFO] END {'-'*10}")
