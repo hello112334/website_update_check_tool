@@ -27,7 +27,6 @@ from requests.adapters import HTTPAdapter
 # OpenAI
 import openai
 
-
 class SSLAdapter(HTTPAdapter):
     def init_poolmanager(self, *args, **kwargs):
         context = ssl.create_default_context()
@@ -58,22 +57,19 @@ OUTPUT_PATH = os.getenv('OUTPUT_PATH')
 WEB_HOOK_URL = os.getenv('WEB_HOOK_URL')
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
-# slack class
-
-
 class Info_news_slack:
     """
-    自治体サイト更新通知アプリSlack
+    Slack
     """
 
     def __init__(self):
         """note"""
         self.webhook = WebhookClient(WEB_HOOK_URL)
-        self.update_status = []
+        self.update_list = []
 
     def update_status(self, text):
         """note"""
-        self.update_status.append(text)
+        self.update_list.append(text)
 
     def send(self, now_str):
         """note"""
@@ -84,9 +80,9 @@ class Info_news_slack:
         text += f"[{now_str}][更新情報]\n"
 
         # 更新状況
-        if len(self.update_status) > 0:
-            for i in range(len(self.update_status)):
-                text += f"{self.update_status[i]}\n"
+        if len(self.update_list) > 0:
+            for i in range(len(self.update_list)):
+                text += f"{self.update_list[i]}\n"
         else:
             text += "更新なし\n"
 
